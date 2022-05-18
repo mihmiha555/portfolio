@@ -1,156 +1,180 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Портфолио Михальченко Михаила</title>
-  </head>
 
-  <body>
-    <header class="page-header">
+<head>
+  <meta charset="UTF-8">
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Портфолио Михальченко Михаила</title>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="container">
+      <a class="header-email" href="malto:mih_miha555@mail.ru">
+        mih_miha555@mail.ru</a>
+      <a class="header-phone" href="tel:+79168762745">+7 916 876-27-45</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-image">
       <div class="container">
-        <a class="header-email" href="malto:mih_miha555@mail.ru">
-          mih_miha555@mail.ru</a>
-        <a class="header-phone" href="tel:+79168762745">+7(916)876-27-45</a>
+        <h1 class="heading">Михальченко Михаил</h1>
+        <p>Системный программист</p>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero-image">
-        <div class="container">
-          <h1 class="heading">Михальченко Михаил</h1>
-          <p>Системный программист</p>
-        </div>
-      </section>
-
-      <section class="intro">
-        <div class="container">
-
-          <h2 class="subheading">Давайте познакомимся</h2>
-
-          <figure class="user-image">
-            <img style="border-radius: 50%" src="files/user.png" alt="Фотография Михаила Михальченко">
-          </figure>
-
-          <div>
-            <h3>Пара слов о себе</h3>
-            <p>Всем привет, меня зовут Михаил и я <span class="term">системный программист</span>.
-              В сфере моих интересов находятся операционные системы, процессорные архитектуры,
-              компиляторы и низкоуровневая оптимизация. Мне всегда хотелось разобраться в том, как
-              компьютеры работают на самом деле.</p>
-            <p>Я студент <span class="term">МФ МГТУ им. Н.Э. Баумана</span>, специальность "Информатика и вычислительная техника".
-              Окончил бакалавриат в 2021 году, в настоящий момент учусь в магистратуре.
-            </p>
-          </div>
-
-          <div>
-            <h3>Чем могу быть полезен</h3>
-            <p>Могу разрабатывать практически весь спектр системного ПО, начиная от системных утилит
-              и библиотек и заканчивая драйверами устройств. Хорошо знаю несколько компьютерных архитектур (<span class="term">x86, NIOS2, RISC V</span>).
-              Имеется неплохой опыт работы непосредственно с ядром <span class="term">Linux</span>, в частности, в области аппаратной виртуализации.
-              Пишу в основном на <span class="term">C</span> и <span class="term">ассемблере</span>, для создания объектно-ориентированных систем использую
-              <span class="term">C++</span>.</p>
-          </div>
-
-          <div class="skills">
-            <h3>Мои навыки</h3>
-            <dl class="skills-list">
-              <dt class="skill-c">C programming language</dt>
-              <dd class="level"><div style="width: 92%;">92%</div></dd>
-
-              <dt class="skill-cpp">C++ programming language</dt>
-              <dd class="level"><div style="width: 72%;">72%</div></dd>
-
-              <dt class="skill-python">Python</dt>
-              <dd class="level"><div style="width: 33%;">33%</div></dd>
-
-              <dt class="skill-linux">Linux</dt>
-              <dd class="level"><div style="width: 80%;">80%</div></dd>
-
-              <dt class="skill-html">HTML</dt>
-              <dd class="level"><div style="width: 60%;">60%</div></dd>
-
-              <dt class="skill-css">CSS</dt>
-              <dd class="level"><div style="width: 40%;">40%</div></dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section class="portfolio">
-        <div class="container">
-
-          <h2 class="subheading">Мои работы</h2>
-
-          <div class="portfolio-item">
-            <h3>Гипервизор <span class="term">Sand</span></h3>
-            <p>Гипервизор 2-ого типа, основывающийся на технологии аппаратной
-              виртуализации <span class="term">Intel VT-x.</span> Позволяет запускать гостевой код в
-              изолированном окружении. Использует механизм <span class="term">EPT</span> для отображения
-              гостевой памяти. Гипервизор реализован в виде модуля ядра <span class="term">Linux</span>.</p>
-          </div>
-
-          <div class="portfolio-item">
-            <h3>Криптографический модуль <span class="term">CryptoPipe</span></h3>
-            <p>Модуль ядра <span class="term">Linux</span>, предоставляющий несколько каналов шифрования/дешифрования
-              данных. Основан на алгоритме <span class="term">Blowfish</span>, реализующим блочное симметричное шифрование
-              с переменной длиной ключа. Доступ к каналу осуществляется через специализированный
-              файл устройства /dev/cpipe.</p>
-          </div>
-
-          <div class="portfolio-item">
-            <h3>Система автоматизированного синтеза программных прошивок</h3>
-            <p>Представляет из себя программный комплекс для создания прошивок приборов с кафедры <span class="term">К3 МФ МГТУ</span>. Ключевой
-              особенностью решения является его модульность: конкретные прошивки для приборов собираются из готового набора программных модулей,
-              которые требуют лишь минимальной доработки для совместного использования.</p>
-          </div>
-
-          <div class="portfolio-item">
-            <h3>Комплект лабораторных работ по сиcтемному программированию для <span class="term">x86</span></h3>
-            <p>Включает в себя несколько лабораторных лабот, посвященных рассмотрению
-              основных аспектов процессоров <span class="term">Intel x86</span>: переход в защищенный режим,
-              обработка исключений и аппаратных прерываний, страничное преобразование
-              адресов, многозадачность. Лабораторные работы предназначены для курса
-              "организация ЭВМ".</p>
-          </div>
-
-          <div class="portfolio-item">
-            <h3>Комплект лабораторных работ по периферийным устройствам</h3>
-            <p>Включает в себя лабораторные работы, посвященные изучению  различных
-              периферийных устройств (терминал, клавиатура, мышь) и их интерфейсов
-              (<span class="term">JTAG UART, RS232, irDA, PS/2</span>). Лабораторные работы предназначены для
-              курса "Периферийные устройства ЭВМ".</p>
-          </div>
-
-          <div class="portfolio-item">
-            <h3>Магазин товаров для дома</h3>
-            <p>Мой первый сайт на <span class="term">HTML Academy</span>. Этот пункт предложено добавить в условии
-              задания. Так себе достижение, но все же :-)</p>
-            <a class="button" href="source/project/index.html">Открыть страницу</a>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="gallery">
-        <div class="container">
-          <h2 class="subheading">Галерея</h2>
-          <figure class="project-image">
-            <img src="files/project.jpg" width="928" height="536" alt="Cайт магазина товаров для дома">
-          </figure>
-        </div>
-      </section>
-    </main>
-
-    <footer class="page-footer">
+    <section class="intro">
       <div class="container">
-        <p>Контактная информация</p>
-        <a class="footer-email" href="malto:mih_miha555@mail.ru">
-          mih_miha555@mail.ru</a>
-        <a class="footer-phone" href="tel:+79168762745">+7(916)876-27-45</a>
-        <p>Михальченко Михаил, 2022</p>
+
+        <h2 class="subheading">Давайте познакомимся</h2>
+
+        <figure class="user-image">
+          <img style="border-radius: 50%" src="files/user.png" alt="Фотография Михаила Михальченко">
+        </figure>
+
+        <div>
+          <h3>Пара слов о&nbsp;себе</h3>
+          <p>Всем привет, меня зовут Михаил и&nbsp;я&nbsp;<span class="term">системный программист</span>.
+            В&nbsp;сфере моих интересов находятся операционные системы, процессорные архитектуры,
+            компиляторы и&nbsp;низкоуровневая оптимизация. Мне всегда хотелось разобраться в&nbsp;том, как
+            компьютеры работают на&nbsp;самом деле.</p>
+          <p>Я&nbsp;студент <span class="term">МФ&nbsp;МГТУ им. Н.Э. Баумана</span>, специальность &laquo;Информатика
+            и&nbsp;вычислительная техника&raquo;.
+            Окончил бакалавриат в&nbsp;2021&nbsp;году, в&nbsp;настоящий момент учусь в&nbsp;магистратуре.
+          </p>
+        </div>
+
+        <div>
+          <h3>Чем могу быть полезен</h3>
+          <p>Могу разрабатывать практически весь спектр системного&nbsp;ПО, начиная от&nbsp;системных утилит
+            и&nbsp;библиотек и&nbsp;заканчивая драйверами устройств. Хорошо знаю несколько компьютерных архитектур
+            (<span class="term">x86, NIOS2, RISC V</span>).
+            Имеется неплохой опыт работы непосредственно с&nbsp;ядром <span class="term">Linux</span>, в&nbsp;частности,
+            в&nbsp;области аппаратной виртуализации.
+            Пишу в&nbsp;основном на&nbsp;<span class="term">C</span> и&nbsp;<span class="term">ассемблере</span>, для
+            создания объектно-ориентированных систем использую
+            <span class="term">C++</span>.</p>
+        </div>
+
+        <div class="skills">
+          <h3>Мои навыки</h3>
+          <dl class="skills-list">
+            <dt class="skill-c">C&nbsp;programming language</dt>
+            <dd class="level">
+              <div style="width: 92%;">92%</div>
+            </dd>
+
+            <dt class="skill-cpp">C++&nbsp;programming language</dt>
+            <dd class="level">
+              <div style="width: 72%;">72%</div>
+            </dd>
+
+            <dt class="skill-python">Python</dt>
+            <dd class="level">
+              <div style="width: 33%;">33%</div>
+            </dd>
+
+            <dt class="skill-linux">Linux</dt>
+            <dd class="level">
+              <div style="width: 80%;">80%</div>
+            </dd>
+
+            <dt class="skill-html">HTML</dt>
+            <dd class="level">
+              <div style="width: 60%;">60%</div>
+            </dd>
+
+            <dt class="skill-css">CSS</dt>
+            <dd class="level">
+              <div style="width: 40%;">40%</div>
+            </dd>
+          </dl>
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section class="portfolio">
+      <div class="container">
+
+        <h2 class="subheading">Мои работы</h2>
+
+        <div class="portfolio-item">
+          <h3>Гипервизор <span class="term">Sand</span></h3>
+          <p>Гипервизор 2-ого типа, основывающийся на&nbsp;технологии аппаратной
+            виртуализации <span class="term">Intel VT-x.</span> Позволяет запускать гостевой код в
+            изолированном окружении. Использует механизм <span class="term">EPT</span> для отображения
+            гостевой памяти. Гипервизор реализован в&nbsp;виде модуля ядра <span class="term">Linux</span>.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <h3>Криптографический модуль <span class="term">CryptoPipe</span></h3>
+          <p>Модуль ядра <span class="term">Linux</span>, предоставляющий несколько каналов шифрования/дешифрования
+            данных. Основан на&nbsp;алгоритме <span class="term">Blowfish</span>, реализующим блочное симметричное
+            шифрование
+            с&nbsp;переменной длиной ключа. Доступ к&nbsp;каналу осуществляется через специализированный
+            файл устройства <span class="term">/dev/cpipe</span>.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <h3>Система автоматизированного синтеза программных прошивок</h3>
+          <p>Представляет из&nbsp;себя программный комплекс для создания прошивок приборов с&nbsp;кафедры <span
+              class="term">К3&nbsp;МФ МГТУ</span>. Ключевой
+            особенностью решения является его модульность: конкретные прошивки для приборов собираются из&nbsp;готового
+            набора программных модулей,
+            которые требуют лишь минимальной доработки для совместного использования.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <h3>Комплект лабораторных работ по&nbsp;сиcтемному программированию для <span class="term">x86</span></h3>
+          <p>Включает в&nbsp;себя несколько лабораторных лабот, посвященных рассмотрению
+            основных аспектов процессоров <span class="term">Intel x86</span>: переход в&nbsp;защищенный режим,
+            обработка исключений и&nbsp;аппаратных прерываний, страничное преобразование
+            адресов, многозадачность. Лабораторные работы предназначены для курса
+            &laquo;организация ЭВМ&raquo;.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <h3>Комплект лабораторных работ по&nbsp;периферийным устройствам</h3>
+          <p>Включает в&nbsp;себя лабораторные работы, посвященные изучению различных
+            периферийных устройств (терминал, клавиатура, мышь) и&nbsp;их&nbsp;интерфейсов
+            (<span class="term">JTAG UART, RS232, irDA, PS/2</span>). Лабораторные работы предназначены для
+            курса &laquo;Периферийные устройства ЭВМ&raquo;.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <h3>Магазин товаров для дома</h3>
+          <p>Мой первый сайт на&nbsp;<span class="term">HTML&nbsp;Academy</span>. Этот пункт предложено добавить
+            в&nbsp;условии
+            задания.</p>
+          <a class="button" href="source/project/index.html">Открыть страницу</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <h2 class="subheading">Галерея</h2>
+        <figure class="project-image">
+          <img src="files/project.jpg" width="928" height="536" alt="Cайт магазина товаров для дома">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Контактная информация</p>
+      <a class="footer-email" href="malto:mih_miha555@mail.ru">
+        mih_miha555@mail.ru</a>
+      <a class="footer-phone" href="tel:+79168762745">+7 916 876-27-45</a>
+      <p>Михальченко Михаил, 2022</p>
+    </div>
+  </footer>
+</body>
+
 </html>

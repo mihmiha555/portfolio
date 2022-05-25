@@ -1,14 +1,19 @@
 body {
   margin: 0;
-  min-width: 960px;
+  min-width: 320px;
   font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
-  line-height: 32px;
+  line-height: 1.5;
   color: #222222;
   background-color: #f2f4f6;
   background-image: url("img/hero-bg.jpg");
   background-repeat: no-repeat;
   background-position: top center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -40,11 +45,16 @@ body {
 }
 
 .page-header a {
-  margin-left: 56px;
+  display: inline-block;
+  margin-bottom: 20px;
   color: #288be6;
   text-decoration: none;
   background-repeat: no-repeat;
   background-position: left;
+}
+
+.page-header a + a {
+  margin-left: 56px;
 }
 
 .header-email {
@@ -70,14 +80,14 @@ body {
   margin: 0 0 16px;
   font-family: "Old Standard TT", "Times", "Times New Roman", serif;
   font-size: 88px;
-  line-height: 96px;
+  line-height: 1.3;
   font-weight: 400;
 }
 
 .hero-image p {
   margin: 0;
   font-size: 32px;
-  line-height: 48px;
+  line-height: 1.3;
 }
 
 .intro {
@@ -88,7 +98,7 @@ body {
   margin: 0 0 56px;
   font-family: "Old Standard TT", "Times", "Times New Roman", serif;
   font-size: 64px;
-  line-height: 80px;
+  line-height: 1.3;
   font-weight: 400;
   text-align: center;
 }
@@ -103,7 +113,7 @@ body {
 .portfolio h3 {
   margin: 0 0 12px;
   font-size: 28px;
-  line-height: 40px;
+  line-height: 1.3;
   font-weight: 500;
 }
 
@@ -205,11 +215,16 @@ body {
 }
 
 .page-footer a {
-  margin-left: 56px;
+  display: inline-block;
+  margin-bottom: 20px;
   color: inherit;
   text-decoration: none;
   background-repeat: no-repeat;
   background-position: left;
+}
+
+.page-footer a + a {
+  margin-left: 56px;
 }
 
 .footer-email {
@@ -220,4 +235,29 @@ body {
 .footer-phone {
   padding-left: 25px;
   background-image: url("img/icon-phone-footer.svg");
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 60px;
+  }
+
+  .subheading {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .heading,
+  .subheading {
+    font-size: 40px;
+  }
+
+  .hero-image p {
+    font-size: 26px;
+  }
+  .intro h3,
+  .portfolio h3 {
+    font-size: 22px;
+  }
 }

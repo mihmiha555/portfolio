@@ -261,3 +261,30 @@ img {
     font-size: 22px;
   }
 }
+
+.buttons-block {
+  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sort-button {
+  /* Сброс стилей по умолчанию */
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+
+  /* Стилизация кнопки */
+  margin: 2px 0;
+  border: solid 3px rgba(56, 47, 139, 0.5);
+  border-radius: 6px;
+  padding: 6px 20px;
+  font-weight: bold;
+}
+
+.sort-button:hover {
+  background-color: #288be6;
+}

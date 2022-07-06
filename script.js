@@ -8,36 +8,13 @@
  * generateSkillsList - формирует HTML-представление объекта skills
  * (но не воздействует на DOM-дерево напрямую);
  *
- * sortSkillsList - меняет порядок элементов списка навыков.
+ * sortSkillsList - меняет порядок элементов списка навыков,
+ *
+ * setSkillsList - инициализирует список навыков объекта.
  * (Подробнее о методах см. ниже)
  */
 const skills = {
-    list: [
-    {
-        name: "C",
-        level: 92
-    },
-    {
-        name: "C++",
-        level: 72
-    },
-    {
-        name: "Python",
-        level: 33
-    },
-    {
-        name: "Linux",
-        level: 80
-    },
-    {
-        name: "HTML",
-        level: 60
-    },
-    {
-        name: "CSS",
-        level: 40
-    }
-    ],
+    list: [],   /* Список изначально пуст */
 
 /**
  * Формирует HTML-представление списка навыков на основе внутреннего состояния
@@ -49,23 +26,25 @@ generateSkillsList : function () {
 
     const descriptionList = new DocumentFragment();
 
-    this.list.forEach(skill => {
-        const dt = document.createElement("dt");
-        dt.classList.add(`skill-${skill.name.toLowerCase()}`);
-        dt.textContent = skill.name;
+    /* Так как список навыков может быть пуст, добавим соответствующую проверку */
+    if(this.list.length) {
+        this.list.forEach(skill => {
+            const dt = document.createElement("dt");
+            dt.classList.add(`skill-${skill.name.toLowerCase()}`);
+            dt.textContent = skill.name;
 
-        const dd = document.createElement("dd");
-        dd.classList.add("level");
+            const dd = document.createElement("dd");
+            dd.classList.add("level");
 
-        const div = document.createElement("div");
-        div.style.width = `${skill.level}%`;
-        div.textContent = `${skill.level}%`;
+            const div = document.createElement("div");
+            div.style.width = `${skill.level}%`;
+            div.textContent = `${skill.level}%`;
 
-        dd.append(div);
-        descriptionList.append(dt);
-        descriptionList.append(dd);
-    });
-
+            dd.append(div);
+            descriptionList.append(dt);
+            descriptionList.append(dd);
+        });
+    }
     return descriptionList;
 },
 
@@ -102,6 +81,11 @@ compareByLevelInvert: (a, b) => b.level - a.level,
  */
 sortSkillsList: function (property) {
 
+    /* Так как список навыков может быть пуст, добавим соответствующую проверку */
+    if (!this.list.length) {
+        return;
+    }
+
     let compareFunc;
     /**
      * На основе выбранного свойства и текущего направления сортировки выбирается
@@ -127,6 +111,33 @@ sortSkillsList: function (property) {
     }
 
     this.list.sort(compareFunc);
+},
+
+/**
+ * Инициализирует список навыков объекта.
+ * Передаваемый параметр должен быть массивом объектов,
+ * каждый из которых содержит свойства "name" и "level".
+ *
+ * @param {Array} json - спосок навыков в виде массива объектов.
+ */
+setSkillsList: function (json) {
+    this.list = [];
+    if (Array.isArray(json)) {
+        /**
+         * Каждый элемент переданного массива валидируется (проверяются наличие
+         * и правильность типов для "name" и "level"), и если проверка успешна,
+         * то навык добавляется к внутреннему списку.
+         */
+        json.forEach(entry => {
+            if (typeof entry.name == "string" &&
+                typeof entry.level == "number") {
+                    const skill = {};
+                    skill.name = entry.name;
+                    skill.level = entry.level;
+                    this.list.push(skill);
+                }
+        });
+    }
 }
 };
 
@@ -134,8 +145,15 @@ sortSkillsList: function (property) {
 const skillsList = document.querySelector(".skills-list"),
       buttonsBlock = document.querySelector(".buttons-block");
 
-/* Стартовая генерация списка навыков */
-skillsList.replaceChildren(skills.generateSkillsList());
+fetch("db/skills.json")
+    .then(data => data.json())
+    .then(json => {
+        /* Инициализируем объект skills данными из файла */
+        skills.setSkillsList(json);
+        /* Стартовая генерация списка навыков */
+        skillsList.replaceChildren(skills.generateSkillsList());
+    })
+    .catch(() => console.error("Oops, something went wrong!"));
 
 /**
  * При обработке нажатия кнопок используется делегирование событий:

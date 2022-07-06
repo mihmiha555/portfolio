@@ -1,0 +1,26 @@
+[
+    {
+        "name": "C",
+        "level": 92
+    },
+    {
+        "name": "C++",
+        "level": 72
+    },
+    {
+        "name": "Python",
+        "level": 33
+    },
+    {
+        "name": "Linux",
+        "level": 80
+    },
+    {
+        "name": "HTML",
+        "level": 60
+    },
+    {
+        "name": "CSS",
+        "level": 40
+    }
+]
